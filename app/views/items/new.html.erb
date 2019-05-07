@@ -1,0 +1,43 @@
+<% @title = "アイテムＮＯ：" %>
+<% @name = "アイテム名：" %>
+<% @category1 = "分類1：" %>
+<% @category2 = "分類2：" %>
+
+<div class="content-title"><h4>アイテム設定</h4></div>
+
+<%= render "shared/errors", obj: @item %>
+
+<div class="mein-content">
+  <div class="left-content">
+    <div class="form-title">
+      <h4>新規登録</h4>
+    </div>
+    <%= form_for @item do |f| %>
+      <%= render partial: "form", :locals => {f:f} %>
+      <%= f.submit "新規登録", class: "edit-bottn" %>
+    <% end %>
+  </div>
+
+  <div class="right-content">
+    <div class="form-title">
+      <h4>アイテム検索</h4>
+    </div>
+      <%= render partial: "search_form" %>
+    <div class="index-title">
+      <h4>検索結果一覧</h4>
+    </div>
+    <div class="index-content">
+      <table>
+        <%= render partial: "index_head" %>
+        <% @items.each do | item | %>
+          <%= render partial: "index", :locals => {item:item}  %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  window.opener.location.reload();
+</script>
+
+<!-- </div> -->

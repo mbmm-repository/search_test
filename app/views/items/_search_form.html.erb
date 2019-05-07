@@ -1,0 +1,27 @@
+<%= form_tag :search_items, method: :get do %>
+  <div class="form-content">
+    <div class="form-parts form-first">
+      <label class="form-label"><%= @title %></label>
+      <%= text_field_tag :no, params[:no], placeholder: "", class: "form-input" %>
+    </div>
+
+    <div class="form-parts">
+      <label class="form-label"><%= @name %></label>
+      <%= text_field_tag :name, params[:name], placeholder: "", class: "form-input" %>
+    </div>
+
+    <div class="form-parts">
+      <label class="form-label"><%= @category1 %></label>
+      <%= text_field_tag :main_category, params[:main_category], placeholder: "", class: "form-input" %>
+    </div>
+
+    <div class="form-parts">
+      <label class="form-label"><%= @category2 %></label>
+      <%= text_field_tag :sub_category, params[:sub_category], placeholder: "", class: "form-input"%>
+    </div>
+  </div>
+<div class="form-submit">
+  <%= submit_tag "検索", class: "edit-bottn" %>
+<% end %>
+  <%= link_to "クリア", new_item_path, class: "clear" %>
+</div>

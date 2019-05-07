@@ -1,0 +1,8 @@
+<tr>
+  <td><%= item.item_no %></td>
+  <td><%= item.item_name %></td>
+  <td><%= item.main_category.category_name %></td>
+  <td><%= item.sub_category.category_name %></td>
+  <td><%= link_to("編集", edit_item_path(item)) %></td>
+  <td><%= link_to("削除", item_path(item), method: :delete, date: {confirm: "削除してもよろしいでしょうか？"}) %></td>
+</tr>
